@@ -15,7 +15,7 @@ from app.api.routes import (
 
 app = FastAPI(
     title="EduFlow AI",
-    description="Secure academic operations automation API with audit logs and AI-assisted triage.",
+    description="API para automação de operações acadêmicas com auditoria, controle de acesso e triagem assistida por IA.",
     version="0.1.0",
 )
 

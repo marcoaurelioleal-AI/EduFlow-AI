@@ -323,7 +323,7 @@ function App() {
           <div>
             <p className="eyebrow">Acesso local</p>
             <h2>Entrar no painel</h2>
-            <p className="muted">Use as credenciais criadas pelo seed para explorar o sistema.</p>
+            <p className="muted">Use as credenciais criadas pela carga inicial para explorar o sistema.</p>
           </div>
           <form onSubmit={handleLogin}>
             <label>
@@ -702,7 +702,7 @@ function QuickCourseForm({
     <InlineForm
       disabled={disabled}
       fields={[
-        { name: "name", label: "Curso", placeholder: "Python para Back-end" },
+        { name: "name", label: "Curso", placeholder: "Python para Backend" },
         { name: "category", label: "Categoria", placeholder: "Tecnologia" },
         { name: "workload_hours", label: "Horas", placeholder: "120", type: "number" },
       ]}

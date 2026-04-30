@@ -1,69 +1,69 @@
 # EduFlow AI
 
-Back-end automation platform for academic operations, replacing manual SQL updates with secure APIs, audit logs, role-based access control and AI-assisted request analysis.
+Plataforma backend para automação de operações acadêmicas, substituindo alterações manuais via SQL por APIs seguras, trilhas de auditoria, controle de acesso por perfil e análise de solicitações com apoio de IA.
 
 ## Sobre o projeto
 
-O EduFlow AI simula uma plataforma interna de backoffice academico para instituicoes de ensino. A proposta e substituir alteracoes manuais no banco de dados por fluxos seguros via API, com validacao de regras de negocio, controle de acesso, auditoria e apoio de IA para triagem administrativa.
+O EduFlow AI simula uma plataforma interna de backoffice acadêmico para instituições de ensino. A proposta é substituir alterações manuais no banco de dados por fluxos seguros via API, com validação de regras de negócio, controle de acesso, auditoria e apoio de IA para triagem administrativa.
 
-O projeto foi construido para portfolio backend Python, automacao, dados e IA aplicada. A interface React funciona como vitrine do produto, mas o nucleo tecnico esta no backend Python.
+O projeto foi construído para portfólio backend Python, automação, dados e IA aplicada. A interface React funciona como vitrine do produto, mas o núcleo técnico está no backend Python.
 
 ## Problema
 
-Em muitas operacoes internas, mudancas criticas ainda sao feitas manualmente via SQL, como:
+Em muitas operações internas, mudanças críticas ainda são feitas manualmente via SQL, como:
 
-- alteracao de status de aluno;
-- criacao ou bloqueio de matricula;
-- revisao financeira;
-- cancelamento de solicitacoes;
-- ajustes em dados sensiveis sem trilha de auditoria.
+- alteração de status de aluno;
+- criação ou bloqueio de matrícula;
+- revisão financeira;
+- cancelamento de solicitações;
+- ajustes em dados sensíveis sem trilha de auditoria.
 
-Esse processo aumenta risco operacional, dificulta rastreabilidade e fragiliza a seguranca.
+Esse processo aumenta o risco operacional, dificulta a rastreabilidade e fragiliza a segurança.
 
-## Solucao
+## Solução
 
-O EduFlow AI centraliza essas alteracoes em uma API REST segura. Toda acao critica passa por:
+O EduFlow AI centraliza essas alterações em uma API REST segura. Toda ação crítica passa por:
 
-- autenticacao JWT;
+- autenticação JWT;
 - perfis de acesso;
-- validacoes do Safe Change Engine;
-- persistencia relacional com SQLAlchemy 2.0;
+- validações do Safe Change Engine;
+- persistência relacional com SQLAlchemy 2.0;
 - logs de auditoria;
-- analise opcional por IA generativa.
+- análise opcional por IA generativa.
 
 ## Principais funcionalidades
 
 - Login com JWT.
 - Perfis `admin`, `operator` e `viewer`.
 - Cadastro e consulta de alunos.
-- CPF com mascara `000.000.000-00` e validacao de exatamente 11 digitos.
+- CPF com máscara `000.000.000-00` e validação de exatamente 11 dígitos.
 - Cadastro e consulta de cursos.
-- Criacao e controle de matriculas.
-- Bloqueio de alteracoes perigosas por regra de negocio.
-- Solicitacoes administrativas com fluxo de revisao.
-- Analise de solicitacoes com OpenAI API ou fallback local.
-- Auditoria para alteracoes criticas.
-- Frontend React em Portugues BR.
+- Criação e controle de matrículas.
+- Bloqueio de alterações perigosas por regra de negócio.
+- Solicitações administrativas com fluxo de revisão.
+- Análise de solicitações com OpenAI API ou fallback local.
+- Auditoria para alterações críticas.
+- Frontend React em Português BR.
 - Docker Compose com PostgreSQL, API e frontend.
 - Testes automatizados com Pytest.
 
-## Onde Python esta presente
+## Onde Python está presente
 
-Python e o centro do projeto:
+Python é o centro do projeto:
 
 - API FastAPI em `app/main.py`;
 - rotas REST em `app/api/routes`;
-- autenticacao e seguranca em `app/core`;
+- autenticação e segurança em `app/core`;
 - modelos SQLAlchemy 2.0 em `app/models`;
 - schemas Pydantic v2 em `app/schemas`;
-- regras de negocio em `app/services`;
+- regras de negócio em `app/services`;
 - Safe Change Engine em `app/services/safe_change_service.py`;
 - auditoria em `app/services/audit_service.py`;
-- integracao com IA em `app/services/ai_service.py`;
+- integração com IA em `app/services/ai_service.py`;
 - seed do banco em `app/db/seed.py`;
 - testes em `app/tests`.
 
-O React consome essa API Python e apresenta a experiencia visual do produto.
+O React consome essa API Python e apresenta a experiência visual do produto.
 
 ## Tecnologias
 
@@ -89,7 +89,7 @@ O React consome essa API Python e apresenta a experiencia visual do produto.
 - Lucide React
 - CSS responsivo customizado
 
-### Infra
+### Infraestrutura
 
 - Docker
 - Docker Compose
@@ -101,12 +101,12 @@ O React consome essa API Python e apresenta a experiencia visual do produto.
 eduflow-ai/
 ├── app/
 │   ├── api/routes/                  # Endpoints REST
-│   ├── core/                        # Configuracao, seguranca e permissoes
-│   ├── db/                          # Conexao, metadata e seed
+│   ├── core/                        # Configuração, segurança e permissões
+│   ├── db/                          # Conexão, metadata e seed
 │   ├── models/                      # Modelos SQLAlchemy
 │   ├── repositories/                # Acesso a dados
 │   ├── schemas/                     # Contratos Pydantic
-│   ├── services/                    # Regras de negocio, IA e auditoria
+│   ├── services/                    # Regras de negócio, IA e auditoria
 │   └── tests/                       # Testes automatizados
 ├── frontend/                        # Interface React
 ├── streamlit_app/                   # Dashboard legado opcional
@@ -120,29 +120,29 @@ eduflow-ai/
 
 Entidades principais:
 
-- `users`: usuarios internos e perfis.
-- `students`: alunos e status academico.
+- `users`: usuários internos e perfis.
+- `students`: alunos e status acadêmico.
 - `courses`: cursos.
-- `enrollments`: matriculas e status financeiro.
-- `administrative_requests`: solicitacoes administrativas.
-- `ai_request_analysis`: analises geradas por IA.
+- `enrollments`: matrículas e status financeiro.
+- `administrative_requests`: solicitações administrativas.
+- `ai_request_analysis`: análises geradas por IA.
 - `audit_logs`: trilha de auditoria.
 
-## Regras de negocio
+## Regras de negócio
 
-- Admin pode gerenciar usuarios e consultar auditoria.
+- Admin pode gerenciar usuários e consultar auditoria.
 - Operator pode criar e alterar dados operacionais.
 - Viewer pode apenas consultar.
-- Aluno bloqueado nao pode receber matricula.
-- Curso inativo nao aceita matricula.
-- Matricula nao pode ser ativada com pagamento vencido.
-- Matricula concluida nao pode ser cancelada.
-- CPF deve conter exatamente 11 digitos reais.
+- Aluno bloqueado não pode receber matrícula.
+- Curso inativo não aceita matrícula.
+- Matrícula não pode ser ativada com pagamento vencido.
+- Matrícula concluída não pode ser cancelada.
+- CPF deve conter exatamente 11 dígitos reais.
 - E-mail e CPF duplicados retornam erro claro.
 
 ## Safe Change Engine
 
-O Safe Change Engine centraliza regras que evitam alteracoes perigosas no banco. Ele representa o diferencial do projeto: trocar updates manuais por validacoes aplicacionais rastreaveis.
+O Safe Change Engine centraliza regras que evitam alterações perigosas no banco. Ele representa o diferencial do projeto: trocar updates manuais por validações aplicacionais rastreáveis.
 
 Arquivo principal:
 
@@ -150,7 +150,7 @@ Arquivo principal:
 app/services/safe_change_service.py
 ```
 
-Funcoes principais:
+Funções principais:
 
 - `validate_student_status_change`
 - `validate_enrollment_creation`
@@ -160,10 +160,10 @@ Funcoes principais:
 
 ## Auditoria
 
-Alteracoes criticas geram registros em `audit_logs`, incluindo:
+Alterações críticas geram registros em `audit_logs`, incluindo:
 
-- usuario;
-- acao;
+- usuário;
+- ação;
 - entidade;
 - registro afetado;
 - valor antigo;
@@ -171,7 +171,7 @@ Alteracoes criticas geram registros em `audit_logs`, incluindo:
 - motivo;
 - data.
 
-Exemplos de acoes auditadas:
+Exemplos de ações auditadas:
 
 - `student_status_changed`
 - `course_status_changed`
@@ -185,7 +185,7 @@ Exemplos de acoes auditadas:
 
 ## IA aplicada
 
-O endpoint abaixo analisa uma solicitacao administrativa:
+O endpoint abaixo analisa uma solicitação administrativa:
 
 ```http
 POST /requests/{request_id}/ai-analysis
@@ -197,14 +197,14 @@ Retorno esperado:
 {
   "predicted_category": "financial_review",
   "priority": "high",
-  "summary": "Aluno solicita revisao de cobranca possivelmente indevida.",
-  "suggested_action": "Encaminhar para analise financeira.",
+  "summary": "Aluno solicita revisão de cobrança possivelmente indevida.",
+  "suggested_action": "Encaminhar para análise financeira.",
   "risk_level": "medium",
   "model_used": "gpt-4o-mini"
 }
 ```
 
-Se `OPENAI_API_KEY` nao estiver configurada, o sistema usa fallback local para nao quebrar o ambiente de desenvolvimento.
+Se `OPENAI_API_KEY` não estiver configurada, o sistema usa fallback local para não quebrar o ambiente de desenvolvimento.
 
 ## Como rodar com Docker
 
@@ -212,7 +212,7 @@ Se `OPENAI_API_KEY` nao estiver configurada, o sistema usa fallback local para n
 docker compose up --build
 ```
 
-Servicos:
+Serviços:
 
 - API: `http://localhost:8000`
 - Swagger: `http://localhost:8000/docs`
@@ -247,7 +247,7 @@ npm install
 npm run dev
 ```
 
-## Variaveis de ambiente
+## Variáveis de ambiente
 
 Crie um arquivo `.env` baseado em `.env.example`.
 
@@ -270,7 +270,7 @@ Criadas pelo seed:
 - `operator@eduflow.ai` / `operator123`
 - `viewer@eduflow.ai` / `viewer123`
 
-Essas credenciais sao apenas para ambiente local.
+Essas credenciais são apenas para ambiente local.
 
 ## Endpoints principais
 
@@ -308,7 +308,7 @@ Ou dentro do container:
 docker compose exec api pytest
 ```
 
-Ultima validacao local:
+Última validação local:
 
 ```text
 12 passed
@@ -316,35 +316,35 @@ Ultima validacao local:
 
 ## Frontend
 
-O frontend React foi criado para ser a experiencia principal do produto. Ele inclui:
+O frontend React foi criado para ser a experiência principal do produto. Ele inclui:
 
 - tela de login;
-- painel com metricas;
-- cadastros de alunos, cursos, matriculas e solicitacoes;
-- mascara e validacao de CPF;
-- area de analise com IA;
-- auditoria para usuarios admin;
-- interface em Portugues BR;
+- painel com métricas;
+- cadastros de alunos, cursos, matrículas e solicitações;
+- máscara e validação de CPF;
+- área de análise com IA;
+- auditoria para usuários admin;
+- interface em Português BR;
 - visual leve, colorido e profissional.
 
 ## Roadmap
 
-- RAG com politicas academicas.
-- Integracao com n8n.
-- Notificacoes automaticas.
-- Relatorios em PDF.
+- RAG com políticas acadêmicas.
+- Integração com n8n.
+- Notificações automáticas.
+- Relatórios em PDF.
 - Deploy em cloud.
 - Testes de carga.
 - CI/CD.
-- Suite de testes frontend.
+- Suíte de testes frontend.
 
 ## O que este projeto demonstra
 
 - Arquitetura backend Python limpa.
-- Separacao entre rotas, servicos, schemas, modelos e repositorios.
-- Regras de negocio fora das rotas.
-- Validacao de dados com Pydantic.
-- Persistencia relacional com SQLAlchemy 2.0.
-- Uso pratico de IA generativa.
+- Separação entre rotas, serviços, schemas, modelos e repositórios.
+- Regras de negócio fora das rotas.
+- Validação de dados com Pydantic.
+- Persistência relacional com SQLAlchemy 2.0.
+- Uso prático de IA generativa.
 - Frontend consumindo uma API real.
-- Dockerizacao de uma aplicacao full stack.
+- Dockerização de uma aplicação full stack.
