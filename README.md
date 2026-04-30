@@ -327,6 +327,24 @@ O frontend React foi criado para ser a experiência principal do produto. Ele in
 - interface em Português BR;
 - visual leve, colorido e profissional.
 
+## Screenshots
+
+### Login
+
+![Tela de login do EduFlow AI](docs/images/login.png)
+
+### Painel administrativo
+
+![Painel administrativo com métricas do EduFlow AI](docs/images/painel.png)
+
+### Matrículas
+
+![Tela de matrículas do EduFlow AI](docs/images/matriculas.png)
+
+### Auditoria
+
+![Tela de auditoria do EduFlow AI](docs/images/auditoria.png)
+
 ## Roadmap
 
 - RAG com políticas acadêmicas.
